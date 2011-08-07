@@ -1,8 +1,6 @@
 <packages>
 <package>
 	<name>QuickSmash</name>
-	<namespace>QuickSmash</namespace>
-	<directory>.</directory>
 	<filein>quicksmash.st</filein>
 	<file>quicksmash.st</file>
 </package>

@@ -3,7 +3,7 @@
 
 PackageLoader fileInPackage: 'QuickSmash'.
 
-(QuickSmash.QuickSmash genChar) printNl.
+(QuickSmash genString) printNl.
 
 "function propertyEven(x) { return x % 2 === 0; }
 
