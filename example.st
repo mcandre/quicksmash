@@ -3,40 +3,39 @@
 
 PackageLoader fileInPackage: 'QuickSmash'.
 
-(QuickSmash genString) printNl.
+| genNum genEven propEven propReversible |
 
-"function propertyEven(x) { return x % 2 === 0; }
+"Answer a random number."
+genNum := [
+	| i |
 
-function arbEven() {
-	var b = qc.arbByte();
+	i := QuickSmash genInteger: -100 upTo: 100.
 
-	if (b % 2 === 0) { return b; }
-	else { return (b + 1) % 256; }
-}
+	i.
+].
 
-function validInteger(s) {
-	var i = parseInt(s, 10);
-	return typeof(i) === "number" && !isNaN(i);
-}
+"Answer a random even number."
+genEven := [
+	| i |
 
-function arbDigits() {
-	var
-		d = "",
-		fn = function () { return String.fromCharCode(48 + Math.floor(Math.random() * 10)); };
+	i := genNum value.
 
-	while (d.length < 1) { d = qc.arbArray(fn); }
+	(i odd) ifTrue: [ i := i + 1. ].
 
-	return d;
-}
+	i.
+].
 
-function main() {
-	qc.forAll(propertyEven, qc.arbByte); // *** Failed!
+"Answer true if number is even, false otherwise."
+propEven := [ :x | x even. ].
 
-	qc.forAll(propertyEven, arbEven); // +++ OK, passed 100 tests.
+"Test even property over even numbers."
+QuickSmash testProperty: propEven withGenerators: { genEven }.
 
-	qc.forAll(validInteger, qc.arbString); // *** Failed!
+"Test even property over regular numbers."
+QuickSmash testProperty: propEven withGenerators: { genNum }.
 
-	qc.forAll(validInteger, arbDigits); // +++ OK, passed 100 tests.
-}
+"Answer true if string = reverse(reverse(string)), false otherwise."
+propReversible := [ :s | s = (s reverse) reverse].
 
-if (!module.parent) { main(); }"
+"Test reversible property over random strings."
+QuickSmash testProperty: propReversible withGenerators: { [ QuickSmash genString. ] }.

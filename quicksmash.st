@@ -35,7 +35,7 @@ Object subclass: QuickSmash [
 		^c
 	]
 
-	"Answers an array of random length populated by a closure (generator)."
+	"Answers an array of random length populated by a generator closure."
 	QuickSmash class >> genArray: generator [
 		| len lst |
 
@@ -55,5 +55,27 @@ Object subclass: QuickSmash [
 		s := (QuickSmash genArray: [ QuickSmash genChar. ]) asString.
 
 		^s
+	]
+
+	"Tests property closure with random arguments created by generator closures."
+	QuickSmash class >> testProperty: property withGenerators: generators [
+		1 to: 100 do: [ :i |
+			| args result |
+
+			args := generators collect: [ :g | g value. ].
+
+			result := property valueWithArguments: args.
+
+			result ifFalse: [
+				Transcript show: '*** Failed!: '.
+				args printNl.
+
+				^false
+			].
+		].
+
+		Transcript show: '+++ OK, passed 100 tests.'; cr.
+
+		^true
 	]
 ]
