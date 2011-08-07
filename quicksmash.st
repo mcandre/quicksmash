@@ -4,11 +4,11 @@ Object subclass: QuickSmash [
 	random := Random new.
 
 	QuickSmash class >> genChar [
-		| c |
+		| i c |
 
-		c := $a.
+		i := random between: 0 and: 255.
 
-		"..."
+		c := i asCharacter.
 
 		^c
 	]
