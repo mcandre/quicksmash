@@ -6,13 +6,7 @@ PackageLoader fileInPackage: 'QuickSmash'.
 | genNum genEven propEven propReversible |
 
 "Answer a random number."
-genNum := [
-	| i |
-
-	i := QuickSmash genInteger: -100 upTo: 100.
-
-	i.
-].
+genNum := [ QuickSmash genInteger: -100 upTo: 100. ].
 
 "Answer a random even number."
 genEven := [
