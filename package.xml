@@ -1,7 +1,7 @@
 <packages>
 <package>
 	<name>QuickSmash</name>
-	<filein>quicksmash.st</filein>
-	<file>quicksmash.st</file>
+	<filein>QuickSmash.st</filein>
+	<file>QuickSmash.st</file>
 </package>
 </packages>
