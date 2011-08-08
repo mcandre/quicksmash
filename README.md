@@ -1,4 +1,4 @@
-quicksmash - A Smalltalk port of the QuickCheck unit test framework
+QuickSmash - A Smalltalk port of the QuickCheck unit test framework
 
 EXAMPLE
 
