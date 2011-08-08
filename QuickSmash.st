@@ -17,19 +17,19 @@ Object subclass: QuickSmash [
 	QuickSmash class >> genByte [
 		"Answers a random byte."
 
-		^QuickSmash genInteger: 0 upTo: 255.
+		^self genInteger: 0 upTo: 255.
 	]
 
 	QuickSmash class >> genChar [
 		"Answers a random character."
 
-		^(QuickSmash genInteger: 0 upTo: 127) asCharacter.
+		^(self genInteger: 0 upTo: 127) asCharacter.
 	]
 
 	QuickSmash class >> genArray: generator [
 		"Answers an array of random length populated by a generator closure."
 
-		^0 to: (QuickSmash genInteger: 0 upTo: 100) collect: [ :i |
+		^0 to: (self genInteger: 0 upTo: 100) collect: [ :i |
 			generator value.
 		].
 	]
@@ -37,7 +37,7 @@ Object subclass: QuickSmash [
 	QuickSmash class >> genString [
 		"Answers a string of random length."
 
-		^(QuickSmash genArray: [ QuickSmash genChar. ]) asString.
+		^(self genArray: [ self genChar. ]) asString.
 	]
 
 	QuickSmash class >> testProperty: property withGenerators: generators [
