@@ -1,7 +1,5 @@
 Object subclass: QuickSmash [
-	| random version |
-
-	random := Random new.
+	| version |
 
 	version := '0.0.1'.
 
@@ -9,9 +7,9 @@ Object subclass: QuickSmash [
 
 	QuickSmash class >> genInteger: a upTo: b [
 		"Answers a random integer.
-		Thin wrapper around Random."
+		Thin wrapper around SequenceableCollection atRandom."
 
-		^random between: a and: b.
+		^(a to: b) atRandom.
 	]
 
 	QuickSmash class >> genByte [
