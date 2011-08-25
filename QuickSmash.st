@@ -53,7 +53,7 @@ Object subclass: QuickSmash [
 			args := generators collect: [ :g | g value. ].
 
 			(property valueWithArguments: args) ifFalse: [
-				Transcript show: '*** Failed!: '.
+				Transcript show: '*** Failed! '.
 				args printNl.
 
 				^false
