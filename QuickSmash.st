@@ -12,6 +12,12 @@ Object subclass: QuickSmash [
 		^(a to: b) atRandom.
 	]
 
+	QuickSmash class >> genBool [
+		"Answers a random boolean."
+
+		^(self genInteger: 0 upTo: 1) = 1.
+	]
+
 	QuickSmash class >> genByte [
 		"Answers a random byte."
 
