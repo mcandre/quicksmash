@@ -6,5 +6,5 @@ EXAMPLE
 	gst-package -t ~/.st package.xml &>/dev/null
 	./example.st
 	+++ OK, passed 100 tests.
-	*** Failed!: (-19 )
+	*** Failed! (-19 )
 	+++ OK, passed 100 tests.
