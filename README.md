@@ -1,10 +1,10 @@
-QuickSmash - A Smalltalk port of the QuickCheck unit test framework
+# QuickSmash - A Smalltalk port of the QuickCheck unit test framework
 
-HOMEPAGE
+## HOMEPAGE
 
 [http://www.yellosoft.us/quickcheck](http://www.yellosoft.us/quickcheck)
 
-EXAMPLE
+## EXAMPLE
 
 	$ make
 	gst-package -t ~/.st package.xml &>/dev/null
