@@ -10,13 +10,13 @@ genNum := [ QuickSmash genInteger: -100 upTo: 100. ].
 
 "Answer a random even number."
 genEven := [
-	| i |
+  | i |
 
-	i := genNum value.
+  i := genNum value.
 
-	(i odd) ifTrue: [ i := i + 1. ].
+  (i odd) ifTrue: [ i := i + 1. ].
 
-	i.
+  i.
 ].
 
 "Answer true if number is even, false otherwise."
