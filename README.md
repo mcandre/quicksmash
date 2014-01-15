@@ -40,7 +40,7 @@ Ensure the example script works as expected:
 
     1 scenario (1 passed)
     2 steps (2 passed)
-    0m0.017s
+    0m0.059s
 
 Guard can automatically run testing when the code changes:
 
