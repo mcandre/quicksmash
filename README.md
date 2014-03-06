@@ -1,5 +1,9 @@
 # QuickSmash - A Smalltalk port of the QuickCheck unit test framework
 
+# INSTALL
+
+    $ make install
+
 # EXAMPLE
 
     $ make install
@@ -25,8 +29,11 @@ Example: `brew install gnu-smalltalk`
 * [Bundler](http://bundler.io/)
 * [Cucumber](http://cukes.info/)
 * [Guard](http://guardgem.org/)
+* [aspelllint](https://github.com/mcandre/aspelllint)
 
-# TESTING
+# DEVELOPMENT
+
+## Test
 
 Ensure the example script works as expected:
 
@@ -42,12 +49,15 @@ Ensure the example script works as expected:
     2 steps (2 passed)
     0m0.059s
 
+## Spell Check
+
+    $ aspelllint
+    ...
+
+## Local CI
+
 Guard can automatically run testing when the code changes:
 
     $ bundle
     $ guard -G Guardfile-cucumber
     ...
-
-# INSTALL
-
-    $ make install
