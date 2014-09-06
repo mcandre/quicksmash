@@ -8,3 +8,8 @@ install: package.xml QuickSmash.st example.st
 
 uninstall:
 	-gst-package -t ~/.st package.xml
+
+lili:
+	bundle exec lili .
+
+lint: lili
