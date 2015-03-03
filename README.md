@@ -1,4 +1,4 @@
-# QuickSmash - A Smalltalk port of the QuickCheck unit test framework
+# QuickSmash - a Smalltalk port of the QuickCheck unit test framework
 
 # INSTALL
 
